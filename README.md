@@ -1,5 +1,4 @@
 Bitcoin three nodes private network in regtest mode
----------------------------------------------------
 
 - Node Pool
   - RPC Port 19001, Username: user, Password: pass
@@ -11,7 +10,7 @@ Bitcoin three nodes private network in regtest mode
 To run this image with internal ports exposed at host:
 
 ```bash
-docker run -it -d -p 19001:19001 -p 19002:19002 -p 19003:19003 oweichhold/bitcoin-private-testnet
+docker run -it -d -p 19001:19001 -p 19002:19002 -p 19003:19003 coinfoundry/bitcoin-private-testnet
 ```
 
 Example RPC against Node-Pool:
