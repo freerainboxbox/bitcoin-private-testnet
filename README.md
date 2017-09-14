@@ -1,20 +1,32 @@
-Bitcoin three nodes private network in regtest mode
+## Bitcoin three-node private network in regtest mode
 
 - Node Pool
-  - RPC Port 19001, Username: user, Password: pass
+  - RPC Port 16001, Username: user, Password: pass
 - Node Bob
-  - RPC Port 19002, Username: user, Password: pass
+  - RPC Port 16002, Username: user, Password: pass
 - Node Alice
-  - RPC Port 19003, Username: user, Password: pass
+  - RPC Port 16003, Username: user, Password: pass
 
-To run this image with internal ports exposed at host:
+### Addresses
+
+- Pool:  mjn3q42yxr9yLA3gyseHCZCHEptZC31PEh
+- Bob:   mvPXhjZ2926eSiBGpZkfmyNCDtkrM3b4mC
+- Alice: mpxDmCJ2XsrSEB7BhSAKggRUAxFNsYt3Hr
+
+### To run this image with internal ports exposed at host:
 
 ```bash
-docker run -it -d -p 19001:19001 -p 19002:19002 -p 19003:19003 coinfoundry/bitcoin-private-testnet
+docker run -it -d -p 16001:16001 -p 16002:16002 -p 16003:16003 coinfoundry/bitcoin-private-testnet
 ```
 
-Example RPC against Node-Pool:
+### Generating blocks:
 
 ```bash
-curl --user user:pass --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinfo", "params": [] }' -H 'content-type: application/json;' http://127.0.0.1:19001/
+docker exec -i -t <container_id> /usr/bin/bitcoin-cli -datadir=/data/node-pool generate 1
+```
+
+### Example RPC against Node-Pool:
+
+```bash
+curl --user user:pass --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinfo", "params": [] }' -H 'content-type: application/json;' http://127.0.0.1:16001/
 ```
