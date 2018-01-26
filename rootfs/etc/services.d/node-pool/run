@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "* Starting node-pool ..."
-/usr/bin/bitcoind -daemon -datadir=/data/node-pool
+/usr/bin/bitcoind -daemon -zmqpubhashblock=tcp://0.0.0.0:26001 -datadir=/data/node-pool
 
 s6-svc -d /var/run/s6/services/node-pool

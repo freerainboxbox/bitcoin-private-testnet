@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "* Starting node-bob ..."
-/usr/bin/bitcoind -daemon -datadir=/data/node-bob
+/usr/bin/bitcoind -daemon -zmqpubhashblock=tcp://0.0.0.0:26002 -datadir=/data/node-bob
 
 s6-svc -d /var/run/s6/services/node-bob
