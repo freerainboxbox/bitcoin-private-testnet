@@ -1,3 +1,5 @@
+Forked to include Bitcoin Core 0.16.2.
+
 ## Bitcoin three-node private network in regtest mode
 
 - Node Pool
