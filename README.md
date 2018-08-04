@@ -1,4 +1,4 @@
-Forked to include Bitcoin Core 0.16.2.
+Forked to include Bitcoin Core 0.16.2, and Bionic.
 
 ## Bitcoin three-node private network in regtest mode
 
